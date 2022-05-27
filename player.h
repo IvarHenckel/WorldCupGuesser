@@ -13,7 +13,7 @@ struct team_t {
     char* team_name;
     int group_score;
     int goals_group;
-    int conseded_group;
+    int conceded_group;
 };
 
 typedef struct player_t player_t;

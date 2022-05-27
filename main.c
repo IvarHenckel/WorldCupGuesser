@@ -13,6 +13,9 @@ int main(int argc, char *argv[])
     }
     printf("Reference file used: %s\n", argv[1]);
     player_t* reference = player_create(argv[1]);
+    if (reference->teams->size != 24) {
+        printf("Something is wrong\n");
+    }
     
     if (argc < 3) {
         printf("Error: At least one player file must be provided\n");
@@ -28,6 +31,9 @@ int main(int argc, char *argv[])
         if (reference->group_matches->size != player->group_matches->size) {
             printf("ERROR: wrong number of matches for player %d\n", p + 1);
             goto exit;
+        }
+        if (player->teams->size != 24) {
+            printf("Something is wrong\n");
         }
         for (int i = 0; i < reference->group_matches->size; i++) {
             match_t* m1 = list_get(reference->group_matches, i);
@@ -51,7 +57,11 @@ int main(int argc, char *argv[])
                     } else if (goals_a == goals_b && m1->goals_a == m1->goals_b) {
                         player->score += 3;
                     }
-                    
+
+                    m2->team_a->goals_group += m2->goals_a;
+                    m2->team_a->conceded_group += m2->goals_b;
+                    m2->team_b->goals_group += m2->goals_b;
+                    m2->team_b->conceded_group += m2->goals_a;
                     if (m2->goals_a < m2->goals_b) {
                         m2->team_b->group_score += 3;
                     } else if (m2->goals_a > m2->goals_b) {
@@ -61,6 +71,10 @@ int main(int argc, char *argv[])
                         m2->team_b->group_score += 1;
                     }
                     if (p == 0) { // only count reference group score once
+                        m1->team_a->goals_group += m1->goals_a;
+                        m1->team_a->conceded_group += m1->goals_b;
+                        m1->team_b->goals_group += m1->goals_b;
+                        m1->team_b->conceded_group += m1->goals_a;
                         if (m1->goals_a < m1->goals_b) {
                             m1->team_b->group_score += 3;
                         } else if (m1->goals_a > m1->goals_b) {
@@ -89,10 +103,17 @@ int main(int argc, char *argv[])
                     if (team_group_placement(team_player) == team_group_placement(team_reference)) {
                         player->score += 4;
                     }
+                    if (team_reference->goals_group == team_player->goals_group && team_reference->conceded_group == team_player->conceded_group) {
+                        player->score += 6;
+                    } else if (team_reference->goals_group - team_reference->conceded_group ==  team_player->goals_group - team_player->conceded_group) {
+                        player->score += 4;
+                    } else if (team_reference->goals_group == team_player->goals_group || team_reference->conceded_group == team_player->conceded_group) {
+                        player->score += 2;
+                    }
+                    break;
                 }
             }
         }
-
         printf("Final score for player %d was: %d\n", p + 1, player->score);
     }
 

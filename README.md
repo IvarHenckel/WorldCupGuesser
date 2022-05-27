@@ -11,6 +11,9 @@ Compare to the original scores used I multipl everything with 2 to avoid decimal
 - WIP: Correct placement in groups for a team -> 4 p (This one is in progress but need to think about what happens when the score is equal.)
 - Correct number of group stage points for a team -> 2 p
 - Correct results in a group match -> 2 p
+- Correct number of goals scored AND goals conceded in groups -> 6 p
+- Correct goal difference but not correct goals scored -> 4 p
+- Correct goals scored OR (not both) goals conceded in groups -> 2 p
 
 
 ### Playoffs

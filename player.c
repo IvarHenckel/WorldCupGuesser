@@ -174,7 +174,18 @@ int team_group_placement(team_t* team)
             opponent = match->team_a;
         }
         if (opponent->group_score < team->group_score) opponents_lower_score++;
-        else if (opponent->group_score == team->group_score) printf("Error: group placement undefined! %s %d - %d %s\n", team->team_name, team->group_score, opponent->group_score, opponent->team_name);
+        else if (opponent->group_score == team->group_score) {
+            if (opponent->goals_group - opponent->conceded_group < team->goals_group - team->conceded_group) {
+                opponents_lower_score++;
+            } else if (opponent->goals_group - opponent->conceded_group == team->goals_group - team->conceded_group) {
+                if (opponent->goals_group < team->goals_group) {
+                    opponents_lower_score++;
+                } else if (opponent->goals_group == team->goals_group) {
+                    // Note: this will print out 4 times currently, 2 for each input file (since they are currently the same and then twice since it goes for both teams)
+                    printf("Error: group placement undefined! %s %d - %d %s\n", team->team_name, team->group_score, opponent->group_score, opponent->team_name);
+                }
+            }
+        }
     }
     return opponents_lower_score;
 }
