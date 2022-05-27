@@ -174,6 +174,7 @@ int team_group_placement(team_t* team)
             opponent = match->team_a;
         }
         if (opponent->group_score < team->group_score) opponents_lower_score++;
+        else if (opponent->group_score == team->group_score) printf("Error: group placement undefined! %s %d - %d %s\n", team->team_name, team->group_score, opponent->group_score, opponent->team_name);
     }
     return opponents_lower_score;
 }

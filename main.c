@@ -37,16 +37,21 @@ int main(int argc, char *argv[])
                 match_t* m2 = list_get(player->group_matches, j);
                 if (match_equal(m1, m2)) {
                     found = true;
-                    int goalDiff1 = m1->goals_a - m1->goals_b;
-                    int goalDiff2 = m2->goals_a - m2->goals_b;
+                    int goals_a = m2->goals_a;
+                    int goals_b = m2->goals_b;
                     if (match_reversed(m1, m2)) {
-                        goalDiff2 = m2->goals_b - m2->goals_a;
+                        goals_a = m2->goals_b;
+                        goals_b = m2->goals_a;
                     }
-                    if ((goalDiff1 > 0 && goalDiff2 > 0) || (goalDiff1 < 0 && goalDiff2 < 0)) {
+                    if (m1->goals_a == goals_a && m1->goals_b == goals_b) {
                         player->score += 2;
-                    } else if (goalDiff1 == 0 && goalDiff2 == 0) {
+                    }
+                    if ((goals_a > goals_b && m1->goals_a > m1->goals_b) || (goals_a < goals_b && m1->goals_a < m1->goals_b)) {
+                        player->score += 2;
+                    } else if (goals_a == goals_b && m1->goals_a == m1->goals_b) {
                         player->score += 3;
                     }
+                    
                     if (m2->goals_a < m2->goals_b) {
                         m2->team_b->group_score += 3;
                     } else if (m2->goals_a > m2->goals_b) {
@@ -55,7 +60,7 @@ int main(int argc, char *argv[])
                         m2->team_a->group_score += 1;
                         m2->team_b->group_score += 1;
                     }
-                    if (i == 0) { // only count reference group score once
+                    if (p == 0) { // only count reference group score once
                         if (m1->goals_a < m1->goals_b) {
                             m1->team_b->group_score += 3;
                         } else if (m1->goals_a > m1->goals_b) {

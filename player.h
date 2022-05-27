@@ -12,6 +12,8 @@ struct team_t {
     list_t* group_matches;
     char* team_name;
     int group_score;
+    int goals_group;
+    int conseded_group;
 };
 
 typedef struct player_t player_t;
