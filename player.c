@@ -1,6 +1,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "player.h"
 
 #define MAX_STRING_SIZE 128
@@ -41,6 +42,18 @@ static int string_to_int(char* string)
     if (i == 0) return -1;
     return ret;
 }
+
+bool match_equal(match_t* m1, match_t* m2)
+{
+    bool same_order = strcmp(m1->team_a, m2->team_a) == 0 && strcmp(m1->team_b, m2->team_b) == 0; 
+    return same_order || match_reversed(m1, m2);
+}
+
+bool match_reversed(match_t* m1, match_t* m2)
+{
+    return strcmp(m1->team_a, m2->team_b) == 0 && strcmp(m1->team_b, m2->team_a) == 0;
+}
+
 
 player_t* player_create(char* filename)
 {

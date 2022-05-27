@@ -2,6 +2,19 @@
 A command line tool counting score for a football world cup betting game. Written in C.
 
 ## Rules of the game
+There are four different categories, each category is calculated individually and then the score for each category is added together for the final score. I will add each rule here when this tool is able to calculate the score for the rule. There are more rules in the game that are currently not supported.
+
+Compare to the original scores used I multipl everything with 2 to avoid decimals.
+### Group Stage
+- Correct winner in a match -> 2 p
+- Correctly guesses on a draw for a match -> 3 p
+
+
+### Playoffs
+
+### Goal Scorers
+
+### Extra
 
 ## How to use
 This tool takes as input a number of filenames. The first filename, reffered to as the reference file, corresponds to the file containing the actual results of the worldcup. The other files, refferred to as player files, are the results that each player guessed before the match was played, one file for each contender.  which To begin with *.csv files is the only file format supported. You can easily convert *.xlsx files to *.csv using Microsoft Excel.
@@ -33,6 +46,3 @@ The tool will ignore any lines that are not on this format. This means that a pl
 // With one flag we can write out summaries for groups. Similar for players that scored etc.
 
 // with one parameter we should be able to insert another csv file with legal player names. This can be used to check that there are no unknown player names in any players file.
-
-
-

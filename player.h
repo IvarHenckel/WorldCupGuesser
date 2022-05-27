@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include <stdio.h>
 #include "list.h"
 
@@ -20,6 +21,10 @@ struct match_t {
     int goals_a;
     int goals_b;
 };
+
+bool match_equal(match_t*, match_t*);
+
+bool match_reversed(match_t*, match_t*);
 
 player_t* player_create(char*);
 
