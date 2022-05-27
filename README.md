@@ -7,7 +7,9 @@ There are four different categories, each category is calculated individually an
 Compare to the original scores used I multipl everything with 2 to avoid decimals.
 ### Group Stage
 - Correct winner in a match -> 2 p
-- Correctly guesses on a draw for a match -> 3 p
+- Correct guess on a draw for a match -> 3 p
+- WIP: Correct placement in groups for a team -> 4 p (This one is in progress but need to think about what happens when the score is equal.)
+- Correct number of group stage points for a team -> 2 p
 
 
 ### Playoffs

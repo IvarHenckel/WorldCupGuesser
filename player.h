@@ -11,6 +11,7 @@ typedef struct team_t team_t;
 struct team_t {
     list_t* group_matches;
     char* team_name;
+    int group_score;
 };
 
 typedef struct player_t player_t;
@@ -31,6 +32,8 @@ struct match_t {
     int goals_a;
     int goals_b;
 };
+
+int team_group_placement(team_t*);
 
 bool match_equal(match_t*, match_t*);
 

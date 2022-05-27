@@ -163,3 +163,17 @@ void player_destroy(player_t* player)
     
     free(player);
 }
+
+int team_group_placement(team_t* team)
+{
+    int opponents_lower_score = 0;
+    for (int i = 0; i < team->group_matches->size; i++) {
+        match_t* match = list_get(team->group_matches, i);
+        team_t* opponent = match->team_b;
+        if (match->team_b == team) {
+            opponent = match->team_a;
+        }
+        if (opponent->group_score < team->group_score) opponents_lower_score++;
+    }
+    return opponents_lower_score;
+}

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include "list.h"
 #include "player.h"
 
@@ -46,16 +47,45 @@ int main(int argc, char *argv[])
                     } else if (goalDiff1 == 0 && goalDiff2 == 0) {
                         player->score += 3;
                     }
+                    if (m2->goals_a < m2->goals_b) {
+                        m2->team_b->group_score += 3;
+                    } else if (m2->goals_a > m2->goals_b) {
+                        m2->team_a->group_score += 3;
+                    } else { // a draw
+                        m2->team_a->group_score += 1;
+                        m2->team_b->group_score += 1;
+                    }
+                    if (i == 0) { // only count reference group score once
+                        if (m1->goals_a < m1->goals_b) {
+                            m1->team_b->group_score += 3;
+                        } else if (m1->goals_a > m1->goals_b) {
+                            m1->team_a->group_score += 3;
+                        } else { // a draw
+                            m1->team_a->group_score += 1;
+                            m1->team_b->group_score += 1;
+                        }
+                    }
                 }
             }
-            if (!found) { // no equal match found
+            if (!found) { 
                 printf("ERROR: no equal match found - %s vs %s", m1->team_a->team_name, m1->team_b->team_name);
                 goto exit;
             }
         }
 
-        for (int i = 0; i < reference->group_matches->size; i++) {
-            
+        for (int i = 0; i < reference->teams->size; i++) {
+            team_t* team_reference = list_get(reference->teams, i);
+            for (int j = 0; j < player->teams->size; j++) {
+                team_t* team_player = list_get(player->teams, j);
+                if (strcmp(team_reference->team_name, team_player->team_name) == 0) {    
+                    if (team_reference->group_score == team_player->group_score) {
+                        player->score += 2;
+                    }
+                    if (team_group_placement(team_player) == team_group_placement(team_reference)) {
+                        player->score += 4;
+                    }
+                }
+            }
         }
 
         printf("Final score for player %d was: %d\n", p + 1, player->score);
