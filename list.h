@@ -1,3 +1,8 @@
+#include <stdbool.h>
+
+#ifndef LIST
+#define LIST
+
 typedef struct node_t node_t;
 
 struct node_t {
@@ -17,3 +22,4 @@ void list_add(list_t*, void*);
 list_t* list_create();
 
 bool list_empty(list_t*);
+#endif

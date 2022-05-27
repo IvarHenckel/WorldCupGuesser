@@ -38,4 +38,3 @@ bool list_empty(list_t* list) {
 
 //     return 0;
 // }
-
