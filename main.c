@@ -28,14 +28,12 @@ int main(int argc, char *argv[])
             printf("ERROR: wrong number of matches for player %d\n", p + 1);
             goto exit;
         }
-        list_t* group_matches = reference->group_matches;
-        for (int i = 0; i < group_matches->size; i++) {
-            match_t* m1 = list_get(group_matches, i);
+        for (int i = 0; i < reference->group_matches->size; i++) {
+            match_t* m1 = list_get(reference->group_matches, i);
 
-            list_t* player_matches = player->group_matches;
             bool found = false;
-            for (int j = 0; j < player_matches->size && !found; j++) {
-                match_t* m2 = list_get(player_matches, j);
+            for (int j = 0; j < player->group_matches->size && !found; j++) {
+                match_t* m2 = list_get(player->group_matches, j);
                 if (match_equal(m1, m2)) {
                     found = true;
                     int goalDiff1 = m1->goals_a - m1->goals_b;
@@ -51,9 +49,13 @@ int main(int argc, char *argv[])
                 }
             }
             if (!found) { // no equal match found
-                printf("ERROR: no equal match found - %s vs %s", m1->team_a, m1->team_b);
+                printf("ERROR: no equal match found - %s vs %s", m1->team_a->team_name, m1->team_b->team_name);
                 goto exit;
             }
+        }
+
+        for (int i = 0; i < reference->group_matches->size; i++) {
+            
         }
 
         printf("Final score for player %d was: %d\n", p + 1, player->score);

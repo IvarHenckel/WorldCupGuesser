@@ -45,13 +45,13 @@ static int string_to_int(char* string)
 
 bool match_equal(match_t* m1, match_t* m2)
 {
-    bool same_order = strcmp(m1->team_a, m2->team_a) == 0 && strcmp(m1->team_b, m2->team_b) == 0; 
+    bool same_order = strcmp(m1->team_a->team_name, m2->team_a->team_name) == 0 && strcmp(m1->team_b->team_name, m2->team_b->team_name) == 0; 
     return same_order || match_reversed(m1, m2);
 }
 
 bool match_reversed(match_t* m1, match_t* m2)
 {
-    return strcmp(m1->team_a, m2->team_b) == 0 && strcmp(m1->team_b, m2->team_a) == 0;
+    return strcmp(m1->team_a->team_name, m2->team_b->team_name) == 0 && strcmp(m1->team_b->team_name, m2->team_a->team_name) == 0;
 }
 
 
@@ -64,13 +64,14 @@ player_t* player_create(char* filename)
     }
     player_t* player = calloc(1, sizeof(player_t));
     player->group_matches = list_create();
+    player->teams = list_create();
     while (!feof(fp)) {
         match_t* match = calloc(1, sizeof(match_t));
         //match->goal_scorers = list_create();
-        match->team_a = calloc(MAX_STRING_SIZE, sizeof(char));
-        match->team_b = calloc(MAX_STRING_SIZE, sizeof(char));
+        char team_a_name[MAX_STRING_SIZE];
+        char team_b_name[MAX_STRING_SIZE];
         bool ignore_line = false;
-        char c = read_string(fp, match->team_a);
+        char c = read_string(fp, team_a_name);
         ignore_line = c != ';'; 
         if (!ignore_line) {
             char* goals_a = calloc(MAX_STRING_SIZE, sizeof(char));
@@ -84,7 +85,7 @@ player_t* player_create(char* filename)
             free(goals_a);
         }
         if (!ignore_line) {
-            char* goals_b = calloc(MAX_STRING_SIZE, sizeof(char));
+            char* goals_b = calloc(MAX_STRING_SIZE, sizeof(char)); //TODO should change to array just
             c = read_string(fp, goals_b);
             ignore_line = c != ';';
             if (!ignore_line) {
@@ -95,18 +96,44 @@ player_t* player_create(char* filename)
             free(goals_b);
         }
         if (!ignore_line) {
-            c = read_string(fp, match->team_b);
+            c = read_string(fp, team_b_name);
             ignore_line = (c != ';' && c != '\n' && c != '\0');
         }
         
         if (ignore_line) {
             //list_destroy(match->goal_scorers);
-            free(match->team_a);
-            free(match->team_b);
             free(match);
         } else {
             list_add(player->group_matches, match);
-            printf("%s %d - %d %s\n",  match->team_a, match->goals_a, match->goals_b, match->team_b);
+            team_t* team_a = NULL;
+            team_t* team_b = NULL;
+            for (int i = 0; i < player->teams->size; i++) {
+                team_t* team = list_get(player->teams, i);
+                if (strcmp(team->team_name, team_a_name) == 0) {
+                    team_a = team;
+                } else if(strcmp(team->team_name, team_b_name) == 0) {
+                    team_b = team;
+                }
+            }
+            if (team_a == NULL) {
+                team_a = calloc(1, sizeof(team_t));
+                team_a->group_matches = list_create();
+                team_a->team_name = calloc(MAX_STRING_SIZE, sizeof(char));
+                strcpy(team_a->team_name, team_a_name);
+                list_add(player->teams, team_a);
+            }
+            if (team_b == NULL) {
+                team_b = calloc(1, sizeof(team_t));
+                team_b->group_matches = list_create();
+                team_b->team_name = calloc(MAX_STRING_SIZE, sizeof(char));
+                strcpy(team_b->team_name, team_b_name);
+                list_add(player->teams, team_b);
+            }
+            match->team_a = team_a;
+            match->team_b = team_b;
+            list_add(team_a->group_matches, match);
+            list_add(team_b->group_matches, match);
+            printf("%s %d - %d %s\n",  match->team_a->team_name, match->goals_a, match->goals_b, match->team_b->team_name);
         }
 
         while (c != '\n' && !feof(fp)) { // skip the rest of the line
@@ -122,11 +149,17 @@ void player_destroy(player_t* player)
 {
     for (int i = 0; i < player->group_matches->size; i++) {
         match_t* m = list_get(player->group_matches, i);
-        free(m->team_a);
-        free(m->team_b);
         free(m);
         //goal scorers
     }
     list_destroy(player->group_matches);
+    for (int i = 0; i < player->teams->size; i++) {
+        team_t* team = list_get(player->teams, i);
+        free(team->team_name);
+        list_destroy(team->group_matches);
+        free(team);
+    }
+    list_destroy(player->teams);
+    
     free(player);
 }
