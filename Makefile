@@ -12,4 +12,4 @@ WorldCupGuesser: main.c list.c player.c
 # Run with make fsan
 fsan:
 	$(CC) -o WorldCupGuesser.exe main.c list.c player.c -fsanitize=address -g
-	./WorldCupGuesser.exe
+	./WorldCupGuesser.exe TestData/PlayerIvar.csv TestData/PlayerIvar.csv
