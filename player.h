@@ -4,6 +4,7 @@
 
 #ifndef PLAYER
 #define PLAYER
+
 typedef struct player_t player_t;
 
 struct player_t {

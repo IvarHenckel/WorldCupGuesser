@@ -5,36 +5,27 @@
 
 void list_add(list_t* list, void* data)
 {
-    node_t* node = calloc(1, sizeof(node_t));
-    node->data = data;
-    node->next = list->head;
-    list->head = node;
+    list->data[list->size] = data;
     list->size++;
+    if (list->size == list->internal_size) {
+        list->internal_size *= 2;
+        list->data = realloc(list->data, list->internal_size * sizeof(void*));
+    }
 }
 
 list_t* list_create() {
-    return calloc(1, sizeof(list_t));
+    list_t* list = calloc(1, sizeof(list_t));
+    list->internal_size = 10;
+    list->data = calloc(list->internal_size, sizeof(void*));
 }
 
-bool list_empty(list_t* list) {
-    return list->head == NULL;
+void list_destroy(list_t* list)
+{
+    free(list->data);
+    free(list);
 }
 
-// For testing:
-// int main()
-// {
-//     int for_memory[20];
-//     list_t* l = list_create();
-//     for (int i = 0; i < 20; i++) {
-//         for_memory[i] = i;
-//         list_add(l, &for_memory[i]);
-//     }
-    
-//     node_t* current = l->head;
-//     while (current != NULL) {
-//         printf("%d\n", *((int*) current->data));
-//         current = current->next;
-//     }
-
-//     return 0;
-// }
+void* list_get(list_t* list, int pos)
+{
+    return list->data[pos];
+}

@@ -120,18 +120,13 @@ player_t* player_create(char* filename)
 
 void player_destroy(player_t* player)
 {
-    list_t* l = player->group_matches;
-    node_t* current = l->head;
-    while (current != NULL) {
-        node_t* tmp = current;
-        current = current->next;
-        match_t* m = tmp->data;
+    for (int i = 0; i < player->group_matches->size; i++) {
+        match_t* m = list_get(player->group_matches, i);
         free(m->team_a);
         free(m->team_b);
         free(m);
         //goal scorers
-        free(tmp);
     }
-    free(player->group_matches);
+    list_destroy(player->group_matches);
     free(player);
 }

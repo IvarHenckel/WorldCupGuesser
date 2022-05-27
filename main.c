@@ -22,26 +22,22 @@ int main(int argc, char *argv[])
         list_add(players, player_create(argv[i]));
     }
     
-    
-    int p_id = 1;
-    node_t* p_node = players->head;
-    while (p_node != NULL) {    
-        player_t* player = p_node->data;
+    for (int p = 0; p < players->size; p++) { 
+        player_t* player = list_get(players, p);
         if (reference->group_matches->size != player->group_matches->size) {
-            printf("ERROR: wrong number of matches for player %d\n", p_id);
+            printf("ERROR: wrong number of matches for player %d\n", p + 1);
             goto exit;
         }
-        list_t* l = reference->group_matches;
-        node_t* current = l->head;
-        while (current != NULL) {
-            match_t* m1 = current->data;
+        list_t* group_matches = reference->group_matches;
+        for (int i = 0; i < group_matches->size; i++) {
+            match_t* m1 = list_get(group_matches, i);
 
-            list_t* l2 = player->group_matches;
-            node_t* current2 = l2->head;
-            while (current2 != NULL) {
-                match_t* m2 = current2->data;
-                
+            list_t* player_matches = player->group_matches;
+            bool found = false;
+            for (int j = 0; j < player_matches->size && !found; j++) {
+                match_t* m2 = list_get(player_matches, j);
                 if (match_equal(m1, m2)) {
+                    found = true;
                     int goalDiff1 = m1->goals_a - m1->goals_b;
                     int goalDiff2 = m2->goals_a - m2->goals_b;
                     if (match_reversed(m1, m2)) {
@@ -52,35 +48,24 @@ int main(int argc, char *argv[])
                     } else if (goalDiff1 == 0 && goalDiff2 == 0) {
                         player->score += 3;
                     }
-                    break;
                 }
-            
-                current2 = current2->next;
             }
-            if (current2 == NULL) { // no equal match found
+            if (!found) { // no equal match found
                 printf("ERROR: no equal match found - %s vs %s", m1->team_a, m1->team_b);
                 goto exit;
             }
-            current = current->next;
         }
 
-        printf("Final score for player %d was: %d\n", p_id, player->score);
-
-        p_id++;
-        p_node = p_node->next;
+        printf("Final score for player %d was: %d\n", p + 1, player->score);
     }
 
 
     exit:
     player_destroy(reference);
-    p_node = players->head;
-    while (p_node != NULL) {
-        player_destroy(p_node->data);
-        node_t* tmp = p_node;   
-        p_node = p_node->next;
-        free(tmp);
+    for (int i = 0; i < players->size; i++) {
+        player_destroy(list_get(players, i));
     }
-    free(players);
+    list_destroy(players);
     return 0;
 }
 
