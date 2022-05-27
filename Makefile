@@ -5,5 +5,11 @@ CFLAGS=-I
 
 # with main.c after hej: make knows that the hej command needs to run whenever main.c changes.
 # main.o is also working, but why?
-WorldCupGuesser: main.o
-	$(CC) -o WorldCupGuesser main.o
+WorldCupGuesser: main.c list.c
+	$(CC) -o WorldCupGuesser.exe main.c list.c
+
+
+# Run with make fsan
+fsan:
+	$(CC) -o WorldCupGuesser.exe main.c list.c -fsanitize=address -g
+	./WorldCupGuesser.exe
