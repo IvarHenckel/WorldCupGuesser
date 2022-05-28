@@ -4,17 +4,18 @@ A command line tool counting score for a football world cup betting game. Writte
 ## Rules of the game
 There are four different categories, each category is calculated individually and then the score for each category is added together for the final score. I will add each rule here when this tool is able to calculate the score for the rule. There are more rules in the game that are currently not supported.
 
-Compare to the original scores used I multipl everything with 2 to avoid decimals.
+The group stage is now completely supported. I.e. all rules are calculated but more testing is necessary.
+
+Compare to the original scores used I multiply everything with 2 to avoid decimals.
 ### Group Stage
 - Correct winner in a match -> 2 p
 - Correct guess on a draw for a match -> 3 p
-- WIP: Correct placement in groups for a team -> 4 p (This one is in progress but need to think about what happens when the score is equal.)
-- Correct number of group stage points for a team -> 2 p
 - Correct results in a group match -> 2 p
+- Correct placement in groups for a team -> 4 p 
+- Correct number of group stage points for a team -> 2 p
 - Correct number of goals scored AND goals conceded in groups -> 6 p
 - Correct goal difference but not correct goals scored -> 4 p
 - Correct goals scored OR (not both) goals conceded in groups -> 2 p
-
 
 ### Playoffs
 

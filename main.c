@@ -100,7 +100,35 @@ int main(int argc, char *argv[])
                     if (team_reference->group_score == team_player->group_score) {
                         player->score += 2;
                     }
-                    if (team_group_placement(team_player) == team_group_placement(team_reference)) {
+                    int team_player_place = team_group_placement(team_player);
+                    if (team_player_place == -1) {
+                        while (true) {
+                            //TODO: need to write player name
+                            printf("Group placement for Player %d and team %s needs to be written manually. Write placement 1-4:\n", p, team_player->team_name);
+                            scanf("%d", &team_player_place);
+                            if (team_player_place <= 4 || team_player_place >= 1) {
+                                printf("Registered placement %d\n", team_player_place);
+                                break;
+                            } else {
+                                printf("Answer incorrect format. Write placement 1-4:\n");    
+                            }
+                        }
+                    }
+                    int team_reference_place = team_group_placement(team_reference);
+                    if (team_reference_place == -1) {
+                        while (true) {
+                            //TODO: need to write player name
+                            printf("Group placement for reference and team %s needs to be written manually. Write placement 1-4:\n", team_reference->team_name);
+                            scanf("%d", &team_reference_place);
+                            if (team_reference_place <= 4 || team_reference_place >= 1) {
+                                printf("Registered placement %d\n", team_reference_place);
+                                break;
+                            } else {
+                                printf("Answer incorrect format. Write placement 1-4:\n");    
+                            }
+                        }
+                    }
+                    if (team_player_place == team_reference_place) {
                         player->score += 4;
                     }
                     if (team_reference->goals_group == team_player->goals_group && team_reference->conceded_group == team_player->conceded_group) {

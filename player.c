@@ -164,6 +164,9 @@ void player_destroy(player_t* player)
     free(player);
 }
 
+/*-1 is the error code when this tool cannot determine group placement
+(i.e everything is equal for two teams). This should be handled where this is called.
+Just ask the user. But here we don't know the player number etc.*/
 int team_group_placement(team_t* team)
 {
     int opponents_lower_score = 0;
@@ -182,7 +185,8 @@ int team_group_placement(team_t* team)
                     opponents_lower_score++;
                 } else if (opponent->goals_group == team->goals_group) {
                     // Note: this will print out 4 times currently, 2 for each input file (since they are currently the same and then twice since it goes for both teams)
-                    printf("Error: group placement undefined! %s %d - %d %s\n", team->team_name, team->group_score, opponent->group_score, opponent->team_name);
+                    printf("Group placement undefined! %s %d - %d %s. Needs to be handled by user.\n", team->team_name, team->group_score, opponent->group_score, opponent->team_name);
+                    return -1;
                 }
             }
         }
