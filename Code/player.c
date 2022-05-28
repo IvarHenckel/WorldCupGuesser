@@ -60,20 +60,12 @@ player_t* player_create(char* filename, int id)
         }
         
         if (!ignore_line) {
-            team_t* team_a = NULL;
-            team_t* team_b = NULL;
-            for (int i = 0; i < player->teams->size && (team_a == NULL || team_b == NULL); i++) {
-                team_t* team = list_get(player->teams, i);
-                if (strcmp(team->team_name, team_a_name) == 0) {
-                    team_a = team;
-                } else if(strcmp(team->team_name, team_b_name) == 0) {
-                    team_b = team;
-                }
-            }
+            team_t* team_a = player_get_team(player, team_a_name);
             if (team_a == NULL) {
                 team_a = team_create(team_a_name);
                 list_add(player->teams, team_a);
             }
+            team_t* team_b = player_get_team(player, team_b_name);
             if (team_b == NULL) {
                 team_b = team_create(team_b_name);
                 list_add(player->teams, team_b);

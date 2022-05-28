@@ -53,10 +53,11 @@ int main(int argc, char *argv[])
                 }
             }
             if (!found) { 
-                printf("ERROR: no equal match found - %s vs %s", match_ref->team_a->team_name, match_ref->team_b->team_name);
+                printf("ERROR: no equal match found - %s vs %s\n", match_ref->team_a->team_name, match_ref->team_b->team_name);
                 goto exit;
             }
         }
+        printf("Score for player %d after checking matches only was: %d\n", player->id, player->score);
 
         for (int i = 0; i < reference->teams->size; i++) {
             team_t* team_reference = list_get(reference->teams, i);
