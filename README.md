@@ -1,6 +1,8 @@
 # WorldCupGuesser
 A command line tool counting score for a football world cup betting game. Written in C.
 
+Note: Since the number of teams in a world cup is small. I have not bothered to much to lower the time complexity.
+
 ## Rules of the game
 There are four different categories, each category is calculated individually and then the score for each category is added together for the final score. I will add each rule here when this tool is able to calculate the score for the rule. There are more rules in the game that are currently not supported.
 
@@ -53,3 +55,11 @@ The tool will ignore any lines that are not on this format. This means that a pl
 // With one flag we can write out summaries for groups. Similar for players that scored etc.
 
 // with one parameter we should be able to insert another csv file with legal player names. This can be used to check that there are no unknown player names in any players file.
+
+## TODO:
+1. Add tests
+2. Make bool player_check_correct(player_t* reference); if reference is null we only check simple stuff (reference file).
+3. Add better output. Write out points whenever points are scored rather than just
+4. Add some type of delay. Either a delay of seconds for each point but we could also make it interactive so that the user presses something. Hmm actually, you could just redirect everything to a txt with ">" and handle the delay manually.
+
+
