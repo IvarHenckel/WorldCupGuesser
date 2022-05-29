@@ -8,8 +8,7 @@ CFLAGS=-I
 WorldCupGuesser: main.c list.c player.c file_str_utils.c
 	$(CC) -o WorldCupGuesser.exe main.c list.c player.c file_str_utils.c
 
-
 # Run with make fsan
 fsan:
 	$(CC) -o WorldCupGuesser.exe main.c list.c player.c file_str_utils.c -fsanitize=address -g
-	./WorldCupGuesser.exe ../TestData/PlayerIvar.csv ../TestData/PlayerIvar.csv
+	./WorldCupGuesser.exe ../TestData/ReferenceEuro2020.csv ../TestData/IvarEuro2020.csv

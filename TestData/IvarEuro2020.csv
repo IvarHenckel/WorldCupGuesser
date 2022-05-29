@@ -1,10 +1,10 @@
 Grupp A;;;;;;
-Turkiet;0;2;Italien;C.Immobile;L.Insigne;
+Turkiet;0;2;Italien;C.Immobile;L.Insigne; +2 for right winner
 Wales;1;2;Schweiz;X. Shaqiri;B. Embolo;A. Ramsey
 Turkiet;2;1;Wales;G. Bale;B. Yilmaz;H. Calhanoglu
-Italien;1;0;Schweiz;C.Immobile;;
-Italien;2;0;Wales;C.Immobile;A.Belloti;
-Turkiet;1;2;Schweiz;H. Seferovic;S. Zuber;O. Tufan
+Italien;1;0;Schweiz;C.Immobile;; +2 for right winner
+Italien;2;0;Wales;C.Immobile;A.Belloti; +2 for right winner
+Turkiet;1;2;Schweiz;H. Seferovic;S. Zuber;O. Tufan; +2 for right winner
 ;;P;+;-;;Obs detta �r bara sammanfattningar har jag skrivit fel nedan s� �r det ovan som g�ller och det g�ller alla grupper
 ;Italien;9;5;0;;
 ;Schweiz;6;4;3;;
@@ -17,11 +17,11 @@ Turkiet;1;2;Schweiz;H. Seferovic;S. Zuber;O. Tufan
 ;;;;;;
 Grupp B;;;;;;
 Denmark;2;0;Finland;Y. Poulsen;C. Eriksen;
-Belgien;2;0;Ryssland;R. Lukaku;Y. Carrasco;
-Finland;1;2;Ryssland;A. Dzyuba;A. Golovin;T. Pukki
-Denmark;1;2;Belgien;E. Hazard;T. Hazard;P. H�jbjerg
-Finland;0;3;Belgien;R. Lukaku;R. Lukaku;D. Mertens
-Denmark;1;0;Ryssland;Y. Poulsen;;
+Belgien;2;0;Ryssland;R. Lukaku;Y. Carrasco; +2 for right winner
+Finland;1;2;Ryssland;A. Dzyuba;A. Golovin;T. Pukki; +2 for right winner
+Denmark;1;2;Belgien;E. Hazard;T. Hazard;P. H�jbjerg; +2 for right winner, +2 for right results
+Finland;0;3;Belgien;R. Lukaku;R. Lukaku;D. Mertens; +2 for right winner
+Denmark;1;0;Ryssland;Y. Poulsen;; +2 for right winner
 ;;P;+;-;;
 ;Belgien;9;7;1;;
 ;Denmark;6;4;2;;
@@ -31,12 +31,12 @@ Denmark;1;0;Ryssland;Y. Poulsen;;
 ;;;;;;
 ;;;;;;
 Grupp C;;;;;;
-Österrike;2;0;Nordmakedonien;D. Alaba;M.Sabitzer;
-Nederländerna;2;1;Ukraina;G. Wijnaldum;F. De Jong;R.  Malinovskyi
-Nederländerna;2;1;Österrike;M.Depay;L. De Jong;M. Arnautovi?
-Ukraina;2;0;Nordmakedonien;A. Yarmolenko;R.Yaremchuck;
+Österrike;2;0;Nordmakedonien;D. Alaba;M.Sabitzer; +2 for right winner
+Nederländerna;2;1;Ukraina;G. Wijnaldum;F. De Jong;R.  Malinovskyi; +2 for right winner
+Nederländerna;2;1;Österrike;M.Depay;L. De Jong;M. Arnautovi?; +2 for right winner
+Ukraina;2;0;Nordmakedonien;A. Yarmolenko;R.Yaremchuck; +2 for right winner
 Österrike;1;1;Ukraina;S.Kalajdzic;T. Stepanenko;
-Nederländerna;3;0;Nordmakedonien;M.Depay;M.Depay;S. Berghuis
+Nederländerna;3;0;Nordmakedonien;M.Depay;M.Depay;S. Berghuis; +2 for right winner, +2 for right results
 ;;P;+;-;;
 ;Nederl�nderna;9;7;2;;
 ;Ukraina;4;4;3;;Ukraina vinner p� minst kort eller vad man nu r�knar p� n�r allt annat �r lika
@@ -45,10 +45,10 @@ Nederländerna;3;0;Nordmakedonien;M.Depay;M.Depay;S. Berghuis
 ;;;;;;
 ;;;;;;
 Grupp D;;;;;;
-England;2;1;Kroatien;H. Kane;J. Sancho;M. Kova?i?
-Skottland;0;1;Tjeckien;V. Darida;;
-Kroatien;2;0;Tjeckien;I. Perisic;A. Rebic;
-Skottland;0;3;England;H. Kane;R. Sterling;M. Rashford
+England;2;1;Kroatien;H. Kane;J. Sancho;M. Kova?i?; +2 for right winner
+Skottland;0;1;Tjeckien;V. Darida;;+2 for right winner
+Kroatien;2;0;Tjeckien;I. Perisic;A. Rebic; 
+Skottland;0;3;England;H. Kane;R. Sterling;M. Rashford; I get +2 here but I should not! 
 Kroatien;2;0;Skottland;I. Perisic;A. Kramari?;
 England;2;0;Tjeckien;H. Kane;R. Sterling;
 ;;P;+;-;;
