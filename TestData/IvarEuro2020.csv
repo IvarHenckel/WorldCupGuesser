@@ -6,8 +6,8 @@ Italien;1;0;Schweiz;C.Immobile;; +2 for right winner
 Italien;2;0;Wales;C.Immobile;A.Belloti; +2 for right winner
 Turkiet;1;2;Schweiz;H. Seferovic;S. Zuber;O. Tufan; +2 for right winner
 ;;P;+;-;;Obs detta �r bara sammanfattningar har jag skrivit fel nedan s� �r det ovan som g�ller och det g�ller alla grupper
-;Italien;9;5;0;;
-;Schweiz;6;4;3;;
+;Italien;9;5;0;; +2 for correct goals conceded; +4 correct placement
+;Schweiz;6;4;3;; +2 for correct goals scored
 ;Turkiet;3;3;5;;
 ;Wales;0;2;6;;
 ;;;;;;
@@ -23,10 +23,10 @@ Denmark;1;2;Belgien;E. Hazard;T. Hazard;P. H�jbjerg; +2 for right winner, +2 f
 Finland;0;3;Belgien;R. Lukaku;R. Lukaku;D. Mertens; +2 for right winner
 Denmark;1;0;Ryssland;Y. Poulsen;; +2 for right winner
 ;;P;+;-;;
-;Belgien;9;7;1;;
-;Denmark;6;4;2;;
-;Ryssland;3;2;4;;
-;Finland;0;1;7;;
+;Belgien;9;7;1;; +6 for correct goals scored and goals conceded; +4 correct placement
+;Denmark;6;4;2;; +4 correct placement
+;Ryssland;3;2;4;; +2 for correct goals scored
+;Finland;0;1;7;; +2 for correct goals scored
 ;;;;;;
 ;;;;;;
 ;;;;;;
@@ -38,10 +38,10 @@ Ukraina;2;0;Nordmakedonien;A. Yarmolenko;R.Yaremchuck; +2 for right winner
 Österrike;1;1;Ukraina;S.Kalajdzic;T. Stepanenko;
 Nederländerna;3;0;Nordmakedonien;M.Depay;M.Depay;S. Berghuis; +2 for right winner, +2 for right results
 ;;P;+;-;;
-;Nederl�nderna;9;7;2;;
-;Ukraina;4;4;3;;Ukraina vinner p� minst kort eller vad man nu r�knar p� n�r allt annat �r lika
-;�sterrike;4;4;3;;
-;Nordmakedonien;0;0;7;;
+;Nederl�nderna;9;7;2;; +2 for correct goals conceded; +4 correct placement
+;Ukraina;4;4;3;;Ukraina vinner p� minst kort eller vad man nu r�knar p� n�r allt annat �r lika; +2 for correct goals scored
+;�sterrike;4;4;3;; +6 for correct goals scored and goals conceded
+;Nordmakedonien;0;0;7;; +4 correct placement
 ;;;;;;
 ;;;;;;
 Grupp D;;;;;;
@@ -52,25 +52,25 @@ Skottland;0;3;England;H. Kane;R. Sterling;M. Rashford; I get +2 here but I shoul
 Kroatien;2;0;Skottland;I. Perisic;A. Kramari?;
 England;2;0;Tjeckien;H. Kane;R. Sterling;
 ;;P;+;-;;
-;England;9;7;1;;
-;Kroatien;6;5;2;;
-;Tjeckien;3;1;4;;
-;Skottland;0;0;6;;
+;England;9;7;1;; +4 correct placement
+;Kroatien;6;5;2;; +4 correct placement
+;Tjeckien;3;1;4;; +4 correct placement
+;Skottland;0;0;6;; +4 correct placement
 ;;;;;;
 ;;;;;;
 ;;;;;;
 Grupp E;;;;;;
-Spanien;1;0;Sverige;A. Morata;;
+Spanien;1;0;Sverige;A. Morata;; 
 Polen;2;0;Slovakien;R. Lewandowski;R. Lewandowski;
 Sverige;2;0;Slovakien;A. Isak;M. Berg;
 Spanien;2;1;Polen;A. Morata;Koke;K. Linetty
 Sverige;1;1;Polen;P. Zielinski;E. Forsberg;
 Spanien;3;0;Slovakien;A. Morata;F. Torres;D. Olmo
 ;;P;+;-;;
-;Spanien;9;6;1;;
-;Polen;4;4;3;;
-;Sverige;4;3;2;;
-;Slovakien;0;0;7;;
+;Spanien;9;6;1;;  +6 for correct goals scored and goals conceded
+;Polen;4;4;3;; +2 for correct goals scored
+;Sverige;4;3;2;; +2 for correct goals conceded
+;Slovakien;0;0;7;; +2 for correct goals conceded
 ;;;;;;
 Grupp F;;;;;;
 Ungern;0;3;Portugal;C. Ronaldo;C. Ronaldo;C. Ronaldo
@@ -80,10 +80,10 @@ Portugal;1;1;Tyskland;C. Ronaldo;T. Werner;
 Ungern;0;2;Tyskland;S. Gnabry;S. Gnabry;
 Frankrike;1;0;Portugal;K.Benzema;;
 ;;P;+;-;;
-;Frankrike;9;6;1;;
-;Portugal;4;4;2;;
-;Tyskland;4;4;3;;
-;Ungern;0;0;8;;
+;Frankrike;9;6;1;; +4 correct placement
+;Portugal;4;4;2;;  
+;Tyskland;4;4;3;;  +4 for correct goal difference;
+;Ungern;0;0;8;; +4 correct placement
 ;;;;;;
 ;;;;;;
 ;;;;;;

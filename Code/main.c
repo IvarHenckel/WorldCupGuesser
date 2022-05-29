@@ -58,7 +58,6 @@ int main(int argc, char *argv[])
             }
         }
         printf("Score for player %d after checking matches only was: %d\n", player->id, player->score);
-
         for (int i = 0; i < reference->teams->size; i++) {
             team_t* team_reference = list_get(reference->teams, i);
             team_t* team_player = player_get_team(player, team_reference->team_name);
@@ -69,7 +68,9 @@ int main(int argc, char *argv[])
             int team_player_place = team_group_placement(team_player);
             while (team_player_place > 4 || team_player_place < 1) {
                 printf("Group placement for Player %d and team %s needs to be written manually. Write placement 1-4:\n", player->id, team_player->team_name);
-                scanf("%d", &team_player_place);
+                if (scanf("%d", &team_player_place) != 1) {
+                    team_player_place = -1;
+                }
                 if (team_player_place <= 4 && team_player_place >= 1) {
                     printf("Registered placement %d\n", team_player_place);
                     break;
@@ -81,7 +82,9 @@ int main(int argc, char *argv[])
             int team_reference_place = team_group_placement(team_reference);
             while (team_reference_place > 4 || team_reference_place < 1) {
                 printf("Group placement for reference and team %s needs to be written manually. Write placement 1-4:\n", team_reference->team_name);
-                scanf("%d", &team_reference_place);
+                if (scanf("%d", &team_reference_place) != 1) {
+                    team_reference_place = -1;
+                }
                 if (team_reference_place <= 4 && team_reference_place >= 1) {
                     printf("Registered placement %d\n", team_reference_place);
                     break;

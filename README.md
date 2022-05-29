@@ -57,10 +57,9 @@ The tool will ignore any lines that are not on this format. This means that a pl
 // with one parameter we should be able to insert another csv file with legal player names. This can be used to check that there are no unknown player names in any players file.
 
 ## TODO:
-1. Correct the error, I get 172 using the reference file. But I should get 74 * 2. (For matches I get 50=25x2 which is correct, for placement and group points I get 74 but I should get 22x2, for goal difference I get 44 but I should get 2x27). Since I get more points than I should it is likely not because we are missing a match. For Erik I get 32=2x16 for matches which is correct, 36=18x2 for placements and 40=20x2 for goal stats.
-2. Add tests
-3. Make bool player_check_correct(player_t* reference); if reference is null we only check simple stuff (reference file).
-4. Add better output. Write out points whenever points are scored rather than just
-5. Add some type of delay. Either a delay of seconds for each point but we could also make it interactive so that the user presses something. Hmm actually, you could just redirect everything to a txt with ">" and handle the delay manually.
+1. Add tests. When doing so we also want to move parts to another file.
+2. Make bool player_check_correct(player_t* reference); if reference is null we only check simple stuff (reference file).
+3. Add better output. Write out points whenever points are scored rather than just
+4. Add some type of delay. Either a delay of seconds for each point but we could also make it interactive so that the user presses something. Hmm actually, you could just redirect everything to a txt with ">" and handle the delay manually.
 
 

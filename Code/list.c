@@ -17,6 +17,7 @@ list_t* list_create() {
     list_t* list = calloc(1, sizeof(list_t));
     list->internal_size = 10;
     list->data = calloc(list->internal_size, sizeof(void*));
+    return list;
 }
 
 void list_destroy(list_t* list)
