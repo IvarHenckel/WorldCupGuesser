@@ -149,14 +149,15 @@ int team_group_placement(team_t* team)
         }
         if (opponent->group_score < team->group_score) opponents_lower_score++;
         else if (opponent->group_score == team->group_score) {
-            if (opponent->goals_group - opponent->conceded_group < team->goals_group - team->conceded_group) {
-                opponents_lower_score++;
-            } else if (opponent->goals_group - opponent->conceded_group == team->goals_group - team->conceded_group) {
+            // In Euro2022, match results when the two teams faced each other was the first tie breaker.
+            // if (opponent->goals_group - opponent->conceded_group < team->goals_group - team->conceded_group) {
+            //     opponents_lower_score++;
+            // } else if (opponent->goals_group - opponent->conceded_group == team->goals_group - team->conceded_group) {
                 // Some tournaments use number of goals as tiebreaker others use the match results when the two teams faced each other etc.
                 // Note: this will happen 4 times currently, 2 for each input file (since they are currently the same and then twice since it goes for both teams)
                 printf("Group placement undefined! %s %d - %d %s. Needs to be handled by user.\n", team->team_name, team->group_score, opponent->group_score, opponent->team_name);
                 return -1;
-            }
+            // }
         }
     }
     return 4 - opponents_lower_score;

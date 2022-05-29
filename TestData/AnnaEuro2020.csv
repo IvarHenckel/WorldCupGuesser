@@ -1,0 +1,55 @@
+Turkiet;1;3;Italien;
+Wales;0;2;Schweiz;
+Turkiet;2;1;Wales;
+Italien;2;1;Schweiz;
+Italien;3;0;Wales;
+Turkiet;1;1;Schweiz;
+
+
+Denmark;3;1;Finland;
+Belgien;1;1;Ryssland;
+Finland;1;4;Ryssland;
+Denmark;1;2;Belgien;
+Finland;1;5;Belgien;
+Denmark;0;1;Ryssland;
+
+Österrike;2;0;Nordmakedonien;
+Nederländerna;2;1;Ukraina;
+Nederländerna;3;1;Österrike;
+Ukraina;3;1;Nordmakedonien;
+Österrike;1;1;Ukraina;
+Nederländerna;4;0;Nordmakedonien;
+
+England;1;0;Kroatien;
+Skottland;0;2;Tjeckien;
+Kroatien;2;1;Tjeckien;
+Skottland;1;3;England;
+Kroatien;3;0;Skottland;
+England;1;1;Tjeckien; //OBS denna är lite oklar
+
+Om vi har; England;0;1;Tjeckien; så är tabellen
+Först appliceras inbördes möte men då har alla 1 vinst. Sen vinner kroatien på målskillnad.
+Sen appliceras inbördes möte igen och då är tjeckien över england
+;;Kroatien;6;5;2;
+;;Tjeckien;6;4;2;
+;;England;6;4;2;
+;;Skottland;0;1;8;  
+Om vi har; England;1;1;Tjeckien; så är tabellen
+;;England;7;5;2;
+;;Kroatien;6;5;2;
+;;Tjeckien;4;4;3;
+;;Skottland;0;1;8;
+
+Spanien;2;2;Sverige;
+Polen;2;0;Slovakien;
+Sverige;2;1;Slovakien;
+Spanien;2;2;Polen;
+Sverige;1;1;Polen;
+Spanien;3;0;Slovakien;
+
+Ungern;1;2;Portugal;
+Frankrike;3;2;Tyskland;
+Ungern;1;3;Frankrike;
+Portugal;2;1;Tyskland;
+Ungern;0;2;Tyskland;
+Frankrike;3;3;Portugal;

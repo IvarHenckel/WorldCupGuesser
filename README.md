@@ -57,9 +57,10 @@ The tool will ignore any lines that are not on this format. This means that a pl
 // with one parameter we should be able to insert another csv file with legal player names. This can be used to check that there are no unknown player names in any players file.
 
 ## TODO:
-1. Add tests. When doing so we also want to move parts to another file.
-2. Make bool player_check_correct(player_t* reference); if reference is null we only check simple stuff (reference file).
-3. Add better output. Write out points whenever points are scored rather than just
-4. Add some type of delay. Either a delay of seconds for each point but we could also make it interactive so that the user presses something. Hmm actually, you could just redirect everything to a txt with ">" and handle the delay manually.
+1. Figure out how to handle tie breks in a more convenient way.... (It is different between different tournaments.)
+2. Add tests. When doing so we also want to move parts to another file.
+3. Make bool player_check_correct(player_t* reference); if reference is null we only check simple stuff (reference file).
+4. Add better output. Write out points whenever points are scored rather than just
+5. Add some type of delay. Either a delay of seconds for each point but we could also make it interactive so that the user presses something. Hmm actually, you could just redirect everything to a txt with ">" and handle the delay manually.
 
-
+Note: I will leave this for now. Currently there are other things that are more worth my time but this can already be used to calculate score for the group stage. I am getting the wrong score on AnnaEuro2022.csv but she has made errors so it is hard to know how that was handled in the first place. I think we just miscalculated the first time, I get 18 when calculating again. This is just a hint that my tool can be very useful!

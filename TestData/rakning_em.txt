@@ -1,0 +1,124 @@
+Gruppspel:
+
+Anna:
+	Matchdag 1: 5 + 5 + (0.5) = 10.5 
+	Matchdag 2: 5 + 111 + (0.5) = 8.5
+	Matchdag 3: 5 + 1 + (0.5) = 6.5
+	Totalt: 25.5
+	
+	gruppplacering: 5 + 5 + 5 + 5 = 20
+
+	statistik gruppen: 5      | 5 + 5 | grupp E 1111 = 19
+
+	// Här får jag 18 nu:
+	+1 Italien rätt poäng, +1 Schweiz rätt mål, +1 Schweiz rätt poäng 
+	+1 Danmark rätt poäng, +1 Danmark rätt insläppta, 
+	+1 Nederländerna rätt poäng, +1 Makedonien rätt poäng, +1 Österrike rätt mål, +1 Nederländerna rätt insläppta
+	+1 Rätt poäng england, +1 rätt poäng tjeckien,  +2 rätt målskillnad Tjeckien, +1 rätt gjorda mål skottland
+	+1 rätt poäng Spanien, +1 rätt insläppta Slovakien, 
+	+1 rätt gjorda mål portugal, +1 rätt insläppta Tyskland, 
+	
+	Gruppen Anna: 64.5
+
+
+ 	
+Erik:
+	Matchdag 1: 5 = 5
+	Matchdag 2: 5 + 11 = 7
+	Matchdag 3: 1111 = 4
+	Totalt: 16
+
+	gruppplacering: 5 + 5 + 11 = 12
+	
+	statistik gruppen: 1111    |      5 + 1111 | 5 + 111 = 21
+
+	Gruppen Erik: 49 
+					
+
+Ivar:
+	Matchdag 1: 5 + 1111 = 9
+	Matchdag 2: 5 + 11 = 7
+	Matchdag 3: 5 + 1111 = 9
+	Totalt: 25
+
+	gruppplacering: 5 + 5 + 5 + 5 + 11 = 22
+
+	statistik gruppen: 5 + 5    | 5 + 11 | 5 + 5 = 27
+
+	Gruppen Ivar: 74 (OWL Ostbågar!!)
+
+
+NOTE till WorldCupGuesser: statistik i gruppen är både målskillnad och poäng.
+
+
+///Målskytte:
+Anna:
+	målskytte på rätt plats: grupp: 5 + 5 + 5 + 5 = 20
+				slutspel:
+	totalt mål i em: 5 + 5 + 5 + 1 = 16
+
+	skytteliga: 11
+
+	Målskytte Anna: 38
+
+Erik:
+	målskytte på rätt plats: grupp: 5 + 5 + 11 = 12
+				slutspel:
+
+	totalt mål i em: 5 + 5 + 1111 = 14 
+
+	skytteliga: 11
+
+	Målskytte Erik: 28
+
+Ivar:
+	målskytte på rätt plats: grupp: 5 + 5 + 5 + 5 + 5 + 1 = 26
+				slutspel:
+
+	totalt mål i em: 5 + 5 + 5 (eriks och min skiljer sig med 1 poäng (Erik har 14)) = 15 
+
+	skytteliga:		
+	Målskytte Ivar: 41 (Marabou mjölkachoklada)
+
+
+///Slutspel:
+Anna: 
+	Åttondel: 5 + (0.5) = 5.5
+	Resten: 111 + (0.5) = 3.5
+	Totalt: 9 (Eriks och min skiljer sig med 1 poäng (Erik har 10))
+Erik: 
+	Åttondel: 5 + 111 + (0.5) = 8.5
+	Resten: 1111 = 4
+	Totalt: 12.5 (sia glass)
+
+Ivar: 
+	Åttondel: 5 + 11 + (0.5) = 7.5
+	Resten: 1111 + (0.5) = 4.5
+	Totalt: 12
+
+///Övrigt
+Anna:
+	Lag minst mål: 111 p = 3 p (Pigall)
+	
+Erik:
+
+Ivar:
+
+
+///Totalt:
+Anna:   114.5
+Erik:   89.5
+Ivar:   127 (Twist påse!!!!! <3)
+
+
+
+England 11 mål på 7 matcher = +9
+Danmark 12 mål på 6 matcher = mindre
+Spanjorerna 13 mål på  6 mathcer = +8
+och Italien 13 mål på 7 matcher = +9
+
+
+
+Min tippning Nederländerna 4 matcher 7 mål
+	     Spanien 5 matcher 9 mål
+		Frankrike 7 matcher  13
