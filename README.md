@@ -64,3 +64,5 @@ The tool will ignore any lines that are not on this format. This means that a pl
 5. Add some type of delay. Either a delay of seconds for each point but we could also make it interactive so that the user presses something. Hmm actually, you could just redirect everything to a txt with ">" and handle the delay manually.
 
 Note: I will leave this for now. Currently there are other things that are more worth my time but this can already be used to calculate score for the group stage. I am getting the wrong score on AnnaEuro2022.csv but she has made errors so it is hard to know how that was handled in the first place. I think we just miscalculated the first time, I get 18 when calculating again. This is just a hint that my tool can be very useful!
+
+Note: Even if we do not use this tool for the next tournament (or if we just use it as a double check). It will add more test cases if we use the *.csv format. And if it calculates everything correctly we should be able to trust it the next tournament after that.
